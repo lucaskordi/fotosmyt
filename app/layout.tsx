@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Studio MYT - Fotos de Formatura | Link Digital",
-  description: "Garanta suas fotos de formatura em alta resolução. Memórias que duram para sempre. Link digital exclusivo com download ilimitado.",
+  title: "Studio MYT",
+  description: "Garanta as fotos desse momento tão especial!",
 };
 
 export default function RootLayout({

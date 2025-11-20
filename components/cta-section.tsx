@@ -31,7 +31,7 @@ export default function CtaSection() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-white text-[#0047c7] px-12 py-5 rounded-full text-xl font-bold shadow-2xl hover:bg-gray-100 transition-all duration-300"
+            className="inline-block bg-white text-[#0047c7] px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300"
           >
             Garantir Minhas Fotos Agora
           </motion.a>
