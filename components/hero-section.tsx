@@ -78,7 +78,7 @@ export default function HeroSection() {
             className="flex justify-center items-center"
           >
             <motion.a
-              href="https://pag.ae/81eDZHJw2"
+              href="https://nestlab.pay.yampi.com.br/r/JGEA16BQKP"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
