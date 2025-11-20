@@ -38,7 +38,8 @@ export default function ValueSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Por que <span className="text-[#0047c7]">garantir</span> suas fotos?
+            <span className="block">Porque Garantir</span>
+            <span className="block">Suas <span className="text-[#0047c7]">Fotos</span></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Este momento especial merece ser preservado com a qualidade que ele merece

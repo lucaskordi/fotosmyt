@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { IoCamera } from 'react-icons/io5';
 
 export default function CtaSection() {
   return (
@@ -41,9 +42,10 @@ export default function CtaSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8 text-white/70 text-sm"
+            className="mt-8 text-white/70 text-sm flex items-center justify-center gap-2"
           >
-            📸 Link enviado após o tratamento profissional das fotos
+            <IoCamera className="text-[#e5107a]" />
+            <span>Link enviado após o tratamento profissional das fotos</span>
           </motion.p>
         </motion.div>
       </div>

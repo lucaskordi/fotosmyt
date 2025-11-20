@@ -15,8 +15,8 @@ export default function EmotionalSection() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              <span className="text-[#0047c7]">Reviva</span> esse momento{' '}
-              <span className="text-[#e5107a]">sempre</span>
+              <span className="block">Reviva Esse</span>
+              <span className="block">Momento <span className="text-[#0047c7]">Sempre</span></span>
             </h2>
           </motion.div>
 

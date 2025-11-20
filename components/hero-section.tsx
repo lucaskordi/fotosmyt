@@ -48,8 +48,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-2xl"
           >
-            <span className="text-[#0047c7] drop-shadow-lg">Memórias</span> que{' '}
-            <span className="text-[#e5107a] drop-shadow-lg">duram</span> para sempre
+            <span className="drop-shadow-lg">Memórias que Duram</span>{' '}
+            <span className="text-[#e5107a] drop-shadow-lg">Para Sempre</span>
           </motion.h1>
 
           <motion.p
@@ -95,7 +95,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="absolute bottom-24 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
