@@ -1,0 +1,34 @@
+'use client';
+
+import Image from 'next/image';
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center">
+          <div className="mb-6">
+            <Image
+              src="/LogoMYT.svg"
+              alt="Studio MYT"
+              width={150}
+              height={60}
+              className="h-auto"
+            />
+          </div>
+          <p className="text-gray-400 text-center">
+            © {new Date().getFullYear()} Studio MYT. Todos os direitos reservados.
+          </p>
+          <p className="text-gray-500 text-sm mt-2 text-center">
+            Preservando memórias especiais com qualidade profissional
+          </p>
+          <div className="mt-4 text-center">
+            <p className="text-gray-400 text-sm">Studio Myt LTDA</p>
+            <p className="text-gray-500 text-xs mt-1">CNPJ: 56.848.973/0001-30</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
