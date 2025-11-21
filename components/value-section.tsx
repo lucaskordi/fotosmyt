@@ -56,9 +56,9 @@ export default function ValueSection() {
                 key={index}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.06 }}
-                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: index * 0.08 }}
+                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center opacity-0"
               >
                 <div className="mb-4 flex justify-center">
                   <IconComponent className="text-5xl text-[#e5107a]" />
