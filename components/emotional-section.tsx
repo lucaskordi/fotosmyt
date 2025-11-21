@@ -56,7 +56,7 @@ export default function EmotionalSection() {
             className="text-center mt-12"
           >
             <motion.a
-              href="https://nestlab.pay.yampi.com.br/r/JGEA16BQKP"
+              href="https://nestlab.pay.yampi.com.br/r/3MKC8FRTN1"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

@@ -157,7 +157,7 @@ export default function CheckoutPage() {
                   </li>
                 </ul>
                 <motion.a
-                  href="https://nestlab.pay.yampi.com.br/r/JGEA16BQKP"
+                  href="https://nestlab.pay.yampi.com.br/r/3MKC8FRTN1"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -203,7 +203,7 @@ export default function CheckoutPage() {
                   </li>
                 </ul>
                 <motion.a
-                  href="https://nestlab.pay.yampi.com.br/r/JGEA16BQKP"
+                  href="https://nestlab.pay.yampi.com.br/r/3MKC8FRTN1"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
