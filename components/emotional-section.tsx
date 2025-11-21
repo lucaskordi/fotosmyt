@@ -46,17 +46,9 @@ export default function EmotionalSection() {
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 }
-                }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
               >
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 bg-[#0047c7]/10 rounded-full flex items-center justify-center">
@@ -65,7 +57,7 @@ export default function EmotionalSection() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

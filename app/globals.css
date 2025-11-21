@@ -88,7 +88,7 @@ body {
 }
 
 .animate-logo-3d {
-  animation: logo-3d 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: logo-3d 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 @keyframes float-slow {

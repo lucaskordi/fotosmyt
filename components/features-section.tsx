@@ -54,24 +54,16 @@ export default function FeaturesSection() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 }
-                }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
               >
                 <div className="mb-4 flex justify-center">
                   <IconComponent className="text-5xl text-[#e5107a]" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
