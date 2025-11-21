@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function ParallaxImage() {
@@ -13,20 +14,27 @@ export default function ParallaxImage() {
     setMounted(true);
     setImageSrc(`/img01.webp?v=${Date.now()}`);
     
+    let ticking = false;
+    
     const handleScroll = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const elementTop = rect.top;
-        const elementHeight = rect.height;
-        const scrollPosition = window.scrollY;
-        
-        const imageExtraHeight = elementHeight * 0.25;
-        const maxParallax = imageExtraHeight;
-        const parallaxValue = (elementTop - windowHeight / 2) * -0.2;
-        const clampedParallax = Math.max(-maxParallax, Math.min(maxParallax, parallaxValue));
-        
-        setScrollY(clampedParallax);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const elementTop = rect.top;
+            const elementHeight = rect.height;
+            
+            const imageExtraHeight = elementHeight * 0.25;
+            const maxParallax = imageExtraHeight;
+            const parallaxValue = (elementTop - windowHeight / 2) * -0.2;
+            const clampedParallax = Math.max(-maxParallax, Math.min(maxParallax, parallaxValue));
+            
+            setScrollY(clampedParallax);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -41,7 +49,14 @@ export default function ParallaxImage() {
   const translateY = mounted ? scrollY : 0;
 
   return (
-    <div ref={containerRef} className="relative w-full h-[150px] md:h-[350px] overflow-hidden">
+    <motion.div 
+      ref={containerRef}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="relative w-full h-[150px] md:h-[350px] overflow-hidden"
+    >
       <div 
         className="absolute left-0 w-full"
         style={{ 
@@ -74,7 +89,7 @@ export default function ParallaxImage() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

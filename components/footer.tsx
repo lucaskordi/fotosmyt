@@ -1,12 +1,19 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="bg-[#e5107a] text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col items-center justify-center"
+        >
           <div className="mb-6">
             <Image
               src="/LogoMYT.svg"
@@ -26,7 +33,7 @@ export default function Footer() {
             <p className="text-white text-sm">Studio Myt LTDA</p>
             <p className="text-white text-xs mt-1">CNPJ: 56.848.973/0001-30</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

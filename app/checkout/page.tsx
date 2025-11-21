@@ -22,16 +22,16 @@ export default function CheckoutPage() {
       <Particles />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-12">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="mb-6 flex justify-center"
             >
               {checkAnimation && (
@@ -55,9 +55,9 @@ export default function CheckoutPage() {
             
             <div className="space-y-6">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
@@ -76,9 +76,9 @@ export default function CheckoutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.15 }}
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
@@ -108,9 +108,9 @@ export default function CheckoutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
@@ -140,9 +140,9 @@ export default function CheckoutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.25 }}
                 className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
               >
                 <div className="mb-4">
@@ -187,9 +187,9 @@ export default function CheckoutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
                 className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
               >
                 <div className="mb-4">
@@ -238,7 +238,7 @@ export default function CheckoutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.35 }}
             className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 border border-white/30"
           >
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

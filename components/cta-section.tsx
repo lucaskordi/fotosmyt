@@ -8,10 +8,10 @@ export default function CtaSection() {
     <section id="comprar" className="py-20 bg-gradient-to-r from-[#0047c7] to-[#0035a0]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
@@ -56,7 +56,7 @@ export default function CtaSection() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="mt-8 text-white/70 text-sm flex items-center justify-center gap-2"
           >
             <IoCamera className="text-[#e5107a]" />

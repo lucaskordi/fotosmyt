@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function TextDivider() {
   const [scrollX, setScrollX] = useState(0);
@@ -9,9 +10,17 @@ export default function TextDivider() {
 
   useEffect(() => {
     setMounted(true);
+    let ticking = false;
+    
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setScrollX(scrollPosition);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY;
+          setScrollX(scrollPosition);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     handleScroll();
@@ -25,12 +34,19 @@ export default function TextDivider() {
   const words = ['EMOÇÃO', 'FOTOGRAFIA', 'FORMATURA', 'SONHO', 'CONQUISTA', 'COMEÇO', 'FUTURO', 'RECORDAÇÃO', 'JORNADA', 'CERIMÔNIA', 'AMIZADE', 'LEMBRANÇA', 'TRANSIÇÃO'];
   const wordsReversed = [...words].reverse();
 
-  const scrollOffset = mounted ? scrollX * 1.5 : 0;
-  const scrollOffsetInverted = mounted ? scrollX * 1.5 : 0;
+  const scrollOffset = mounted ? scrollX * 0.5 : 0;
+  const scrollOffsetInverted = mounted ? scrollX * 0.5 : 0;
 
   return (
-    <div ref={containerRef} className="relative w-full overflow-hidden bg-transparent py-6 md:hidden">
-      <div className="flex whitespace-nowrap" style={{ transform: `translateX(-${scrollOffset}px)` }}>
+    <motion.div 
+      ref={containerRef}
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="relative w-full overflow-hidden bg-transparent py-6 md:hidden"
+    >
+      <div className="flex whitespace-nowrap" style={{ transform: `translateX(-${scrollOffset}px)`, willChange: 'transform' }}>
         {[...Array(6)].map((_, groupIndex) => (
           <div key={groupIndex} className="flex space-x-4">
             {words.map((word, index) => (
@@ -41,7 +57,7 @@ export default function TextDivider() {
           </div>
         ))}
       </div>
-      <div className="flex whitespace-nowrap flex-row-reverse mt-0" style={{ transform: `translateX(${scrollOffsetInverted}px)` }}>
+      <div className="flex whitespace-nowrap flex-row-reverse mt-0" style={{ transform: `translateX(${scrollOffsetInverted}px)`, willChange: 'transform' }}>
         {[...Array(6)].map((_, groupIndex) => (
           <div key={`inverted-${groupIndex}`} className="flex space-x-4 flex-row-reverse">
             {wordsReversed.map((word, index) => (
@@ -52,7 +68,7 @@ export default function TextDivider() {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
