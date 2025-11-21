@@ -70,7 +70,7 @@ export default function EmotionalSection() {
           className="text-center"
         >
           <motion.a
-            href="https://studio-myt.pay.yampi.com.br/r/9LZJFD12RY"
+            href="https://studio-myt.pay.yampi.com.br/r/3VBB1SAXZQ"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
