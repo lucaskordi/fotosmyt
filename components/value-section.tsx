@@ -77,7 +77,7 @@ export default function ValueSection() {
           className="text-center"
         >
           <motion.a
-            href="https://nestlab.pay.yampi.com.br/r/3MKC8FRTN1"
+            href="https://seguro.studiomyt.com.br/r/3MKC8FRTN1"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

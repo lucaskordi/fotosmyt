@@ -1,0 +1,23 @@
+INSTRUÇÕES PARA INSERIR NA PÁGINA DE AGRADECIMENTO DA YAMPI:
+
+1. Acesse o painel da Yampi
+2. Vá em Configurações > Páginas > Página de Agradecimento
+3. No campo de HTML/Código personalizado, insira APENAS o seguinte código:
+
+<script type="text/javascript">
+window.onload = function() {
+  setTimeout(function() {
+    window.location.replace('https://studiomyt.com.br/checkout');
+  }, 2000);
+};
+</script>
+
+OU versão ainda mais simples (sem setTimeout):
+
+<script type="text/javascript">
+window.location.href = 'https://studiomyt.com.br/checkout';
+</script>
+
+NOTA: Se a Yampi não aceitar scripts, você pode tentar usar um meta refresh tag:
+
+<meta http-equiv="refresh" content="2;url=https://studiomyt.com.br/checkout">
