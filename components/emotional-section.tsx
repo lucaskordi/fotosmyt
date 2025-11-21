@@ -56,7 +56,7 @@ export default function EmotionalSection() {
                   visible: { opacity: 1 }
                 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
               >
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 bg-[#0047c7]/10 rounded-full flex items-center justify-center">

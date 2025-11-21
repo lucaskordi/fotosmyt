@@ -48,7 +48,7 @@ export default function CheckoutPage() {
             </p>
           </div>
 
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/30">
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <h2 className="text-2xl font-bold mb-6 text-gray-900">
               O que acontece agora?
             </h2>
@@ -130,7 +130,7 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/30">
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">
               Quer algo ainda mais especial?
             </h2>
@@ -143,7 +143,7 @@ export default function CheckoutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.25 }}
-                className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
+                className="bg-white rounded-xl p-6 shadow-lg flex flex-col"
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900">
@@ -190,7 +190,7 @@ export default function CheckoutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
+                className="bg-white rounded-xl p-6 shadow-lg flex flex-col"
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900">
