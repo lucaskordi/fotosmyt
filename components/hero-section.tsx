@@ -89,7 +89,7 @@ export default function HeroSection() {
           opacity: { duration: 0.5, delay: headerReady ? 0 : 0 },
           y: { duration: 0.3, ease: 'easeInOut' },
         }}
-        className="fixed top-0 left-0 right-0 z-20 w-full"
+        className="fixed top-0 left-0 right-0 z-40 w-full"
         style={{ visibility: headerReady ? 'visible' : 'hidden' }}
       >
         <motion.header
