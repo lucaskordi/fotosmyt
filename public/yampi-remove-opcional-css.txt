@@ -1,0 +1,51 @@
+Cole este CSS no campo "CSS Personalizado" da Yampi:
+
+===========================================
+
+label:after {
+  display: none !important;
+}
+
+span:after {
+  display: none !important;
+}
+
+*[class*="optional"],
+*[id*="optional"] {
+  display: none !important;
+}
+
+label,
+span {
+  position: relative;
+}
+
+label::after,
+span::after {
+  content: "" !important;
+  display: none !important;
+}
+
+===========================================
+
+OU esta versão mais agressiva (esconde elementos pequenos que podem conter "(opcional)"):
+
+===========================================
+
+label small,
+span small,
+label .text-muted,
+span .text-muted,
+label[for]:after,
+span:empty:after {
+  display: none !important;
+  visibility: hidden !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+===========================================
+

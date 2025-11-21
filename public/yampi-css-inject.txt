@@ -1,0 +1,14 @@
+CSS PARA INJETAR NA YAMPI - APENAS "(opcional)" BRANCO
+
+Cole este código no campo "CSS Personalizado" da Yampi:
+
+div.order-note label[for="order-note"] span {
+  color: #ffffff !important;
+}
+
+Esta versão é MUITO específica e afeta APENAS:
+- O span dentro do
+- label com for="order-note" dentro da
+- div com classe order-note
+
+Não afeta nenhum outro elemento do site.

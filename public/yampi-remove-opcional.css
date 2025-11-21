@@ -1,0 +1,40 @@
+OPÇÃO 1 - REMOVER COMPLETAMENTE USANDO CSS:
+
+label:after {
+  content: "" !important;
+}
+
+*:contains("(opcional)") {
+  display: none !important;
+}
+
+OPÇÃO 2 - DEIXAR BRANCA:
+
+label,
+span {
+  color: #ffffff !important;
+}
+
+OPÇÃO 3 - USANDO JAVASCRIPT (inserir no campo de código personalizado):
+
+<script>
+(function() {
+  function removeOpcional() {
+    var elements = document.querySelectorAll('*');
+    elements.forEach(function(el) {
+      if (el.textContent && el.textContent.includes('(opcional)')) {
+        el.textContent = el.textContent.replace(/\s*\(opcional\)/gi, '');
+      }
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', removeOpcional);
+  } else {
+    removeOpcional();
+  }
+  
+  setTimeout(removeOpcional, 1000);
+})();
+</script>
+

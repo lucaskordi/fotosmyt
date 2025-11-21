@@ -1,0 +1,23 @@
+CSS PARA DEIXAR "(opcional)" BRANCO
+
+Cole este código no campo "CSS Personalizado" da Yampi:
+
+span {
+  color: #ffffff !important;
+}
+
+OU se quiser ser mais específico:
+
+span:contains("(opcional)"),
+span {
+  color: #ffffff !important;
+}
+
+VERSÃO MAIS ESPECÍFICA (se tiver classe ou atributo):
+
+span[class*="optional"],
+span[id*="optional"],
+span {
+  color: #ffffff !important;
+}
+

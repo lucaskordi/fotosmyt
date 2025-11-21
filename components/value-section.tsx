@@ -28,8 +28,10 @@ const valuePoints = [
 
 export default function ValueSection() {
   return (
-    <section id="beneficios" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="beneficios" className="py-20 bg-white relative">
+      <div className="absolute inset-0 bg-cover bg-no-repeat bg-center md:bg-left-top opacity-50 md:opacity-30 -rotate-90 md:rotate-0" style={{ backgroundImage: 'url(/SHADOWUPLEFT.webp)', height: '100%', minHeight: '100%' }}></div>
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.8) 80%, rgba(255,255,255,1) 100%)' }}></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +59,7 @@ export default function ValueSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
+                className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
               >
                 <div className="mb-4 flex justify-center">
                   <IconComponent className="text-5xl text-[#e5107a]" />
@@ -82,9 +84,10 @@ export default function ValueSection() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-gradient-to-r from-[#0047c7] to-[#0047c7] hover:from-[#0035a0] hover:to-[#0035a0] text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="relative inline-block bg-gradient-to-r from-[#0047c7] to-[#0047c7] hover:from-[#0035a0] hover:to-[#0035a0] text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
           >
-            Garantir Minhas Fotos Agora
+            <span className="relative z-10">Garantir Minhas Fotos Agora</span>
+            <div className="absolute inset-0 animate-light-sweep"></div>
           </motion.a>
         </motion.div>
       </div>

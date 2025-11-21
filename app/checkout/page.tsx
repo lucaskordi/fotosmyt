@@ -3,11 +3,24 @@
 import { motion } from 'framer-motion';
 import { IoCheckmarkCircle, IoCall, IoLogoWhatsapp } from 'react-icons/io5';
 import Image from 'next/image';
+import Lottie from 'lottie-react';
+import { Particles } from '@/components';
+import { useEffect, useState } from 'react';
 
 export default function CheckoutPage() {
+  const [checkAnimation, setCheckAnimation] = useState<any>(null);
+
+  useEffect(() => {
+    fetch('/Check Animation.json')
+      .then((res) => res.json())
+      .then((data) => setCheckAnimation(data))
+      .catch((err) => console.error('Error loading animation:', err));
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white relative">
+      <Particles />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -21,17 +34,21 @@ export default function CheckoutPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-6 flex justify-center"
             >
-              <IoCheckmarkCircle className="text-6xl text-green-500" />
+              {checkAnimation && (
+                <div className="w-[150px] h-[150px]">
+                  <Lottie animationData={checkAnimation} loop={false} />
+                </div>
+              )}
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
-              Compra <span className="text-[#0047c7]">Confirmada</span>!
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+              Compra <span className="text-white">Confirmada</span>!
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white">
               Obrigado por confiar no Studio MYT
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/30">
             <h2 className="text-2xl font-bold mb-6 text-gray-900">
               O que acontece agora?
             </h2>
@@ -53,7 +70,7 @@ export default function CheckoutPage() {
                     Tratamento Profissional
                   </h3>
                   <p className="text-gray-600">
-                    Suas fotos estão sendo tratadas por nossa equipe profissional para garantir a melhor qualidade.
+                    Suas fotos serão tratadas por nossa equipe profissional para garantir a melhor qualidade.
                   </p>
                 </div>
               </motion.div>
@@ -113,7 +130,7 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-[#0047c7]/10 to-[#e5107a]/10 rounded-2xl shadow-xl p-8 mb-8 border border-[#0047c7]/20">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/30">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">
               Quer algo ainda mais especial?
             </h2>
@@ -126,7 +143,7 @@ export default function CheckoutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+                className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900">
@@ -134,7 +151,7 @@ export default function CheckoutPage() {
                   </h3>
                   <div className="w-16 h-1 bg-gradient-to-r from-[#0047c7] to-[#0047c7]/50 rounded-full"></div>
                 </div>
-                <ul className="space-y-3 mb-6 text-gray-600">
+                <ul className="space-y-3 mb-6 text-gray-600 flex-grow">
                   <li className="flex items-start gap-2">
                     <IoCheckmarkCircle className="text-[#0047c7] flex-shrink-0 mt-1" />
                     <span>Capa dura premium com acabamento luxuoso</span>
@@ -162,9 +179,10 @@ export default function CheckoutPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="block w-full bg-gradient-to-r from-[#0047c7] to-[#0047c7] hover:from-[#0035a0] hover:to-[#0035a0] text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="relative block w-full bg-gradient-to-r from-[#0047c7] to-[#0047c7] hover:from-[#0035a0] hover:to-[#0035a0] text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden mt-auto"
                 >
-                  Comprar Álbum Platinum
+                  <span className="relative z-10">Comprar Álbum Platinum</span>
+                  <div className="absolute inset-0 animate-light-sweep"></div>
                 </motion.a>
               </motion.div>
 
@@ -172,7 +190,7 @@ export default function CheckoutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+                className="bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/30 flex flex-col"
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900">
@@ -180,7 +198,7 @@ export default function CheckoutPage() {
                   </h3>
                   <div className="w-16 h-1 bg-gradient-to-r from-gray-900 to-gray-700 rounded-full"></div>
                 </div>
-                <ul className="space-y-3 mb-6 text-gray-600">
+                <ul className="space-y-3 mb-6 text-gray-600 flex-grow">
                   <li className="flex items-start gap-2">
                     <IoCheckmarkCircle className="text-gray-900 flex-shrink-0 mt-1" />
                     <span>Capa dura elegante em preto premium</span>
@@ -208,9 +226,10 @@ export default function CheckoutPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="block w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="relative block w-full bg-gradient-to-r from-[#0047c7] to-[#0047c7] hover:from-[#0035a0] hover:to-[#0035a0] text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden mt-auto"
                 >
-                  Comprar Álbum Black
+                  <span className="relative z-10">Comprar Álbum Black</span>
+                  <div className="absolute inset-0 animate-light-sweep"></div>
                 </motion.a>
               </motion.div>
             </div>
@@ -220,7 +239,7 @@ export default function CheckoutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8 border border-white/30"
           >
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
@@ -256,7 +275,7 @@ export default function CheckoutPage() {
               height={60}
               className="mx-auto h-auto opacity-80"
             />
-            <p className="text-gray-500 text-sm mt-4">
+            <p className="text-white text-sm mt-4">
               Studio MYT - Preservando memórias especiais com qualidade profissional
             </p>
           </div>

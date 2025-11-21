@@ -1,0 +1,23 @@
+CSS ESPECÍFICO PARA DEIXAR APENAS "(opcional)" BRANCO NA DIV order-note
+
+Cole este código no campo "CSS Personalizado" da Yampi:
+
+VERSÃO MAIS ESPECÍFICA (recomendada):
+
+div.order-note.mt10.mb25 > label[for="order-note"] > span {
+  color: #ffffff !important;
+}
+
+OU se a classe mt10 mb25 não funcionar:
+
+div.order-note label[for="order-note"] span {
+  color: #ffffff !important;
+}
+
+OU versão ainda mais restritiva (apenas o span filho direto):
+
+div.order-note > label[for="order-note"] > span {
+  color: #ffffff !important;
+}
+
+Esta versão é MUITO específica e afeta APENAS o span com "(opcional)" dentro do label específico da div order-note, sem afetar NADA mais no site.

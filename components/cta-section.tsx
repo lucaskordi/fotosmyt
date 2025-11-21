@@ -22,9 +22,24 @@ export default function CtaSection() {
             Garanta agora o acesso exclusivo às suas fotos de formatura
           </p>
           
-          <p className="text-lg text-white/80 mb-12">
-            Link digital seguro • Download ilimitado • Alta resolução • Acesso vitalício
-          </p>
+          <ul className="text-lg text-white/80 mb-12 space-y-3 list-none">
+            <li className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#e5107a]"></span>
+              <span>Link digital seguro</span>
+            </li>
+            <li className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#e5107a]"></span>
+              <span>Download ilimitado</span>
+            </li>
+            <li className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#e5107a]"></span>
+              <span>Alta resolução</span>
+            </li>
+            <li className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#e5107a]"></span>
+              <span>Acesso vitalício</span>
+            </li>
+          </ul>
 
           <motion.a
             href="https://seguro.studiomyt.com.br/r/3MKC8FRTN1"

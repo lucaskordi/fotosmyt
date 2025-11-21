@@ -1,6 +1,8 @@
 import {
   HeroSection,
+  TextDivider,
   ValueSection,
+  ParallaxImage,
   EmotionalSection,
   FeaturesSection,
   CtaSection,
@@ -9,9 +11,11 @@ import {
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden w-full">
       <HeroSection />
+      <TextDivider />
       <ValueSection />
+      <ParallaxImage />
       <EmotionalSection />
       <FeaturesSection />
       <CtaSection />

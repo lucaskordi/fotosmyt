@@ -1,0 +1,41 @@
+SCRIPT DE REDIRECIONAMENTO PARA linkdigital.studiomyt.com.br/checkout
+
+INSTRUÇÕES:
+1. Acesse o painel da Yampi
+2. Vá em Configurações > Páginas > Página de Agradecimento
+3. No campo de HTML/Código personalizado, insira o seguinte script:
+
+===========================================
+
+<script>
+setTimeout(function() {
+  window.location.href = 'https://linkdigital.studiomyt.com.br/checkout';
+}, 2000);
+</script>
+
+===========================================
+
+OU versão com window.location.replace (não deixa histórico):
+
+<script>
+setTimeout(function() {
+  window.location.replace('https://linkdigital.studiomyt.com.br/checkout');
+}, 2000);
+</script>
+
+===========================================
+
+OU versão usando window.onload:
+
+<script>
+window.onload = function() {
+  setTimeout(function() {
+    window.location.href = 'https://linkdigital.studiomyt.com.br/checkout';
+  }, 2000);
+};
+</script>
+
+===========================================
+
+O script aguarda 2 segundos antes de redirecionar para dar tempo do usuário ver a confirmação da compra.
+

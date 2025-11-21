@@ -1,7 +1,10 @@
 export { default as HeroSection } from './hero-section';
+export { default as TextDivider } from './text-divider';
 export { default as ValueSection } from './value-section';
+export { default as ParallaxImage } from './parallax-image';
 export { default as EmotionalSection } from './emotional-section';
 export { default as FeaturesSection } from './features-section';
 export { default as CtaSection } from './cta-section';
 export { default as Footer } from './footer';
+export { default as Particles } from './particles';
 

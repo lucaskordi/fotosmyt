@@ -1,0 +1,80 @@
+CSS CUSTOMIZADO PARA YAMPI - ALTERAR TEXTO CINZA (#999999) PARA BRANCO (#FFFFFF)
+
+INSTRUÇÕES:
+1. Acesse o painel da Yampi
+2. Vá em Configurações > Personalização > CSS Personalizado
+3. Cole o código abaixo:
+
+===========================================
+
+* {
+  color: #ffffff !important;
+}
+
+body,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+td,
+th,
+label {
+  color: #ffffff !important;
+}
+
+OPÇÃO 1 - REMOVER A PALAVRA "(opcional)" COMPLETAMENTE:
+
+label:has-text("(opcional)"),
+label:contains("(opcional)"),
+*:contains("(opcional)") {
+  display: none !important;
+}
+
+OU usando seletor mais específico:
+
+label[for*="optional"],
+span:contains("(opcional)"),
+*::after {
+  content: "" !important;
+}
+
+OPÇÃO 2 - DEIXAR "(opcional)" BRANCA (se não conseguir remover):
+
+label,
+span,
+* {
+  color: #ffffff !important;
+}
+
+label:has-text("(opcional)"),
+*:contains("(opcional)") {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+===========================================
+
+VERSÃO SIMPLIFICADA - APENAS PARA REMOVER "(opcional)":
+
+label:after {
+  content: "" !important;
+}
+
+OU usando JavaScript inline (se CSS não funcionar):
+
+<script>
+document.querySelectorAll('*').forEach(function(el) {
+  if (el.textContent && el.textContent.includes('(opcional)')) {
+    el.textContent = el.textContent.replace('(opcional)', '');
+  }
+});
+</script>
+
+===========================================
