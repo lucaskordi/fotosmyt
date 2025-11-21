@@ -36,10 +36,10 @@ export default function FeaturesSection() {
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -56,10 +56,10 @@ export default function FeaturesSection() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 text-center"
               >
                 <div className="mb-4 flex justify-center">
@@ -73,10 +73,10 @@ export default function FeaturesSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
           <motion.a

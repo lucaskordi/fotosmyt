@@ -7,10 +7,16 @@ import Image from 'next/image';
 export default function HeroSection() {
   const [isHidden, setIsHidden] = useState(false);
   const [isOverHero, setIsOverHero] = useState(true);
+  const [headerReady, setHeaderReady] = useState(false);
   const lastScrollY = useRef(0);
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Aguardar o blur estar pronto antes de mostrar o header
+    const timer = setTimeout(() => {
+      setHeaderReady(true);
+    }, 300);
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
@@ -30,7 +36,11 @@ export default function HeroSection() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
   return (
     <section ref={heroRef} className="relative w-full flex items-center justify-center overflow-hidden pb-40 md:pb-0">
@@ -72,14 +82,15 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: 1,
+          opacity: headerReady ? 1 : 0,
           y: isHidden ? -100 : 0,
         }}
         transition={{
-          opacity: { duration: 0.8 },
+          opacity: { duration: 0.5, delay: headerReady ? 0 : 0 },
           y: { duration: 0.3, ease: 'easeInOut' },
         }}
         className="fixed top-0 left-0 right-0 z-20 w-full"
+        style={{ visibility: headerReady ? 'visible' : 'hidden' }}
       >
         <motion.header
           className={`${isOverHero ? 'bg-white/10' : 'bg-[#e5107a]/50'} backdrop-blur-md w-full transition-colors duration-300`}
