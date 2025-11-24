@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Lottie from 'lottie-react';
+import Lottie, { LottieComponentProps } from 'lottie-react';
 import ParticlesBackground from '@/components/particles-background';
 
 export default function Checkout() {
-  const [animationData, setAnimationData] = useState<unknown>(null);
+  const [animationData, setAnimationData] = useState<object | null>(null);
 
   useEffect(() => {
     fetch('/Check Animation.json')
@@ -17,7 +17,7 @@ export default function Checkout() {
     <main className="min-h-screen flex items-center justify-center bg-white px-4 relative">
       <ParticlesBackground />
       <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 max-w-2xl w-full text-center relative z-10">
-        {animationData && (
+        {animationData ? (
           <div className="flex justify-center mb-6">
             <Lottie
               animationData={animationData}
@@ -25,7 +25,7 @@ export default function Checkout() {
               style={{ width: 200, height: 200 }}
             />
           </div>
-        )}
+        ) : null}
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
           Sua compra está confirmada! Obrigado por confiar no Studio MYT. 💜
         </h1>
