@@ -6,5 +6,4 @@ export { default as EmotionalSection } from './emotional-section';
 export { default as FeaturesSection } from './features-section';
 export { default as CtaSection } from './cta-section';
 export { default as Footer } from './footer';
-export { default as Particles } from './particles';
-
+export { default as ParticlesBackground } from './particles-background';

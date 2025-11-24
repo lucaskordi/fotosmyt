@@ -40,3 +40,4 @@ window.onload = function() {
 O script aguarda 2 segundos antes de redirecionar para dar tempo do usuário ver a confirmação da compra.
 
 
+

@@ -14,12 +14,12 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden w-full">
       <HeroSection />
       <TextDivider />
-      <ValueSection />
+      {/* <ValueSection />
       <ParallaxImage />
       <EmotionalSection />
       <FeaturesSection />
       <CtaSection />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
