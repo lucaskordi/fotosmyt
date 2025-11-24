@@ -42,7 +42,7 @@ export default function CtaSection() {
           </ul>
 
           <motion.a
-            href="https://studio-myt.pay.yampi.com.br/checkout?skipToCheckout=1&tokenReference=9LZJFD12RY"
+            href="https://studio-myt.pay.yampi.com.br/r/9LZJFD12RY"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

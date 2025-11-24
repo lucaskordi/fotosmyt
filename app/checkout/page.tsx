@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Lottie, { LottieComponentProps } from 'lottie-react';
+import Lottie from 'lottie-react';
 import ParticlesBackground from '@/components/particles-background';
 
 export default function Checkout() {
