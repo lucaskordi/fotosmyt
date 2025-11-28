@@ -88,18 +88,12 @@ export default function HeroSection() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white drop-shadow-2xl text-center"
             >
               <span className="drop-shadow-lg">
-                Somente hoje você terá acesso ao Link Oficial de Fotos da Colação pelo valor promocional de <span className="text-white">R$ 590,00</span>. Não deixe de aproveitar essa oportunidade.
+                Você piscou e a promo do dia da colação acabou!
+                <br />
+                <br />
+                Mas não fique triste, temos outros pacotes incríveis para você garantir as fotos desse dia tão especial!
               </span>
             </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg text-white mb-3 font-medium drop-shadow-lg text-center"
-            >
-              O fim do Ensino Médio representa a principal transição dessa geração. Hoje é um dia que merece ser guardado para sempre!
-            </motion.p>
           </div>
         </motion.div>
       </div>
@@ -112,7 +106,7 @@ export default function HeroSection() {
           className="flex justify-center items-center mb-12 md:mb-8 relative"
         >
           <motion.a
-            href="https://studio-myt.pay.yampi.com.br/r/9LZJFD12RY"
+            href="https://wa.me/5541999010937"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
